@@ -1,0 +1,606 @@
+/* ============================================================
+   ReadSphere — Premium Bookstore Cart Page Styles
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---------- Page Background ---------- */
+cart-items {
+  background: #f8f7f4;
+  min-height: 60vh;
+}
+
+cart-items .page-width {
+  padding-top: 3.2rem;
+  padding-bottom: 4rem;
+}
+
+/* ---------- Page Title ---------- */
+cart-items .title-wrapper-with-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3.2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e8e4db;
+}
+
+cart-items .title-wrapper-with-link h1.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+cart-items .title-wrapper-with-link .underlined-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  color: #278c3b;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: opacity 0.2s ease;
+}
+
+cart-items .title-wrapper-with-link .underlined-link:hover {
+  opacity: 0.75;
+}
+
+cart-items .title-wrapper-with-link .underlined-link::before {
+  content: '←';
+  font-size: 1.2rem;
+}
+
+/* ---------- Cart Items Table ---------- */
+.cart-items {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1.2rem;
+}
+
+.cart-items thead tr th {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e0dbd2;
+  opacity: 1;
+}
+
+/* ---------- Cart Item Row ---------- */
+.cart-item {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  transform: translateY(-1px);
+}
+
+.cart-item td {
+  padding: 1.8rem 1.2rem;
+  vertical-align: middle;
+}
+
+.cart-item td:first-child {
+  padding-left: 1.8rem;
+  border-radius: 16px 0 0 16px;
+}
+
+.cart-item td:last-child {
+  padding-right: 1.8rem;
+  border-radius: 0 16px 16px 0;
+}
+
+/* ---------- Book Thumbnail ---------- */
+.cart-item__image-container {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f0ece4;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  width: 80px;
+  min-width: 80px;
+}
+
+.cart-item__image {
+  display: block;
+  width: 80px !important;
+  max-width: 80px !important;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 750px) {
+  .cart-item__image-container {
+    width: 100px;
+    min-width: 100px;
+  }
+  .cart-item__image {
+    width: 100px !important;
+    max-width: 100px !important;
+    height: 134px;
+  }
+}
+
+/* ---------- Item Details (title, author, price) ---------- */
+.cart-item__details {
+  font-family: 'Inter', sans-serif;
+}
+
+.cart-item__name {
+  font-size: 1.6rem !important;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  line-height: 1.35;
+  display: block;
+  margin-bottom: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.cart-item__name:hover {
+  color: #278c3b;
+}
+
+/* Vendor (author) line */
+.cart-item__details .caption-with-letter-spacing {
+  font-size: 1.25rem;
+  color: #278c3b;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+}
+
+/* Price in details column */
+.cart-item__details .product-option {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #278c3b;
+  margin-top: 0.6rem;
+}
+
+.cart-item__details .product-option s,
+.cart-item__old-price {
+  color: #aaa;
+  font-weight: 400;
+  text-decoration: line-through;
+  margin-right: 0.4rem;
+}
+
+.cart-item__final-price {
+  color: #278c3b !important;
+  font-weight: 700;
+}
+
+/* ---------- Quantity Selector (pill style) ---------- */
+.cart-quantity.quantity {
+  border: 1.5px solid #e0dbd2;
+  border-radius: 999px;
+  background: #f8f7f4;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  height: 3.8rem;
+}
+
+.cart-quantity .quantity__button {
+  background: transparent;
+  border: none;
+  width: 3.4rem;
+  height: 3.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #278c3b;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: background 0.15s ease;
+}
+
+.cart-quantity .quantity__button:hover {
+  background: #edf6ef;
+}
+
+.cart-quantity .quantity__input {
+  border: none !important;
+  background: transparent;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  width: 3.6rem;
+  -moz-appearance: textfield;
+}
+
+.cart-quantity .quantity__input::-webkit-inner-spin-button,
+.cart-quantity .quantity__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ---------- Remove Button ---------- */
+cart-remove-button a.button {
+  background: transparent;
+  border: 1.5px solid #f0ece4;
+  border-radius: 8px;
+  width: 3.4rem;
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  margin-left: 0.8rem;
+}
+
+cart-remove-button a.button:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+  background: #fff5f5;
+}
+
+/* ---------- Line Total (right column) ---------- */
+.cart-item__totals .price {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cart-item__totals .cart-item__old-price {
+  color: #bbb;
+  text-decoration: line-through;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+/* ---------- EMPTY CART STATE ---------- */
+.rs-empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.rs-empty-cart__icon {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #edf6ef, #f5f0e8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+}
+
+.rs-empty-cart__icon svg {
+  width: 60px;
+  height: 60px;
+  opacity: 0.6;
+}
+
+.rs-empty-cart__heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem;
+}
+
+.rs-empty-cart__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  color: #777;
+  line-height: 1.6;
+  max-width: 38rem;
+  margin: 0 0 3rem;
+}
+
+.rs-empty-cart__btn {
+  display: inline-block;
+  padding: 1.4rem 3.6rem;
+  background: #278c3b;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(39,140,59,0.25);
+}
+
+.rs-empty-cart__btn:hover {
+  background: #1e6e2d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39,140,59,0.35);
+}
+
+/* Hide the default empty warning when our custom one is showing */
+.rs-empty-cart ~ .cart__warnings,
+.cart__warnings .cart__empty-text,
+.cart__warnings > .button {
+  display: none !important;
+}
+
+.is-empty .cart__warnings {
+  padding: 0 !important;
+}
+
+/* ---------- CART FOOTER / ORDER SUMMARY ---------- */
+#main-cart-footer {
+  background: #f8f7f4;
+}
+
+#main-cart-footer .page-width {
+  padding-top: 0;
+  padding-bottom: 5rem;
+}
+
+.cart__footer {
+  background: transparent;
+}
+
+/* Order summary card */
+.cart__blocks {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.8rem 2.4rem 2.4rem;
+  max-width: 46rem;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .cart__blocks {
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 2rem 1.8rem;
+  }
+}
+
+/* Summary heading */
+.cart__blocks .totals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 0 0;
+  border-top: 1.5px solid #e8e4db;
+  margin-top: 1.4rem;
+}
+
+.cart__blocks .totals__total {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+}
+
+.cart__blocks .totals__total-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Tax note */
+.cart__blocks .tax-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #999;
+  text-align: center;
+  margin: 1rem 0 1.6rem;
+}
+
+/* Discounts in summary */
+.cart__blocks .discounts {
+  margin-bottom: 1.2rem;
+}
+
+.cart__blocks .discounts__discount {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  color: #278c3b;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- Checkout Button ---------- */
+.cart__checkout-button {
+  width: 100% !important;
+  max-width: 100% !important;
+  background: #278c3b !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em;
+  padding: 1.5rem 2rem !important;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 4px 16px rgba(39,140,59,0.28);
+  margin-top: 0 !important;
+}
+
+.cart__checkout-button:hover:not(:disabled) {
+  background: #1e6e2d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(39,140,59,0.38);
+}
+
+.cart__checkout-button:disabled {
+  background: #c0d9c5 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cart__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ---------- TRUST BADGE STRIP ---------- */
+.rs-trust-strip {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+  padding: 1.4rem 0 1.6rem;
+  border-bottom: 1px solid #f0ece4;
+}
+
+.rs-trust-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.rs-trust-item__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.rs-trust-item__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.rs-trust-item__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #999;
+  line-height: 1.3;
+}
+
+/* ---------- PAYMENT ICONS STRIP ---------- */
+.rs-payment-strip {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.rs-payment-strip__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #aaa;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rs-payment-strip__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rs-payment-badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1.5px solid #e0dbd2;
+  border-radius: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #555;
+  background: #fff;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ---------- Express Checkout Buttons ---------- */
+.cart__dynamic-checkout-buttons {
+  margin-top: 1rem;
+  max-width: 100% !important;
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media screen and (max-width: 749px) {
+  cart-items .title-wrapper-with-link h1.title {
+    font-size: 2.2rem;
+  }
+
+  .cart-item td {
+    padding: 1.4rem 0.8rem;
+  }
+
+  .cart-item td:first-child {
+    padding-left: 1.2rem;
+  }
+
+  .cart-item td:last-child {
+    padding-right: 1.2rem;
+  }
+
+  .rs-trust-strip {
+    gap: 0.4rem;
+  }
+
+  .rs-trust-item__label {
+    font-size: 1rem;
+  }
+
+  .rs-trust-item__sub {
+    display: none;
+  }
+
+  /* Sticky checkout bar on mobile */
+  .cart__blocks {
+    position: relative;
+  }
+
+  .cart__checkout-button {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* ---------- Quantity wrapper in cart ---------- */
+.cart-item__quantity-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ---------- Discard default button styles on remove ---------- */
+cart-remove-button a.button--tertiary {
+  border: 1.5px solid #f0ece4;
+  padding: 0;
+  min-height: unset;
+  box-shadow: none;
+}
