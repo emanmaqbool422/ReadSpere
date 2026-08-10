@@ -61,6 +61,14 @@
         "show_text_below": true
       }
     },
+    "countdown_timer_4mXbWQ": {
+      "type": "countdown-timer",
+      "name": "Countdown Timer",
+      "settings": {
+        "heading": "Today's Best Offers",
+        "end_date": "2026-12-31T23:59:59"
+      }
+    },
     "collection_list_TVPniK": {
       "type": "collection-list",
       "blocks": {
@@ -247,18 +255,10 @@
         "column_alignment": "left",
         "background_style": "primary",
         "color_scheme": "scheme-c69272c4-796c-491a-906f-766c2ebcf857",
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "countdown_timer_4mXbWQ": {
-      "type": "countdown-timer",
-      "name": "Countdown Timer",
-      "settings": {
-        "heading": "Today's Best Offers",
-        "end_date": "2026-12-31T23:59:59"
       }
     }
   },
