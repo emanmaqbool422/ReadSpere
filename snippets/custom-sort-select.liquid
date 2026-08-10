@@ -1,0 +1,62 @@
+{% comment %}
+  Renders custom styled sort select dropdown
+  Accepts:
+  - results: {Object} collection or search object
+  - id_prefix: {String} Optional prefix for ID (e.g. 'mobile-')
+{% endcomment %}
+
+{%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+{%- assign select_id = 'SortBy' -%}
+{%- if id_prefix -%}
+  {%- assign select_id = id_prefix | append: 'SortBy' -%}
+{%- endif -%}
+
+<custom-select class="custom-select-wrapper">
+  <select
+    name="sort_by"
+    class="facet-filters__sort select__select caption-large"
+    id="{{ select_id }}"
+    aria-describedby="a11y-refresh-page-message"
+    tabindex="-1"
+  >
+    {%- for option in results.sort_options -%}
+      <option
+        value="{{ option.value | escape }}"
+        {% if option.value == sort_by %}
+          selected="selected"
+        {% endif %}
+      >
+        {{ option.name | escape }}
+      </option>
+    {%- endfor -%}
+  </select>
+
+  <button type="button" class="custom-select__button" aria-expanded="false" aria-haspopup="listbox">
+    <span class="custom-select__selected-text">
+      {%- for option in results.sort_options -%}
+        {%- if option.value == sort_by -%}{{ option.name | escape }}{%- endif -%}
+      {%- endfor -%}
+    </span>
+    <span class="svg-wrapper">
+      {{- 'icon-caret.svg' | inline_asset_content -}}
+    </span>
+  </button>
+
+  <ul class="custom-select__list" role="listbox" tabindex="-1">
+    {%- for option in results.sort_options -%}
+      <li
+        class="custom-select__option{% if option.value == sort_by %} is-selected{% endif %}"
+        data-value="{{ option.value | escape }}"
+        role="option"
+        aria-selected="{% if option.value == sort_by %}true{% else %}false{% endif %}"
+      >
+        <span>{{ option.name | escape }}</span>
+        {%- if option.value == sort_by -%}
+          <svg class="custom-select__check" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5L5 9L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</custom-select>

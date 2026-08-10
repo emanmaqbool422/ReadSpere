@@ -1,0 +1,139 @@
+.page-title {
+  margin-top: 0;
+}
+
+.main-page-title {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .main-page-title {
+    margin-bottom: 4rem;
+  }
+}
+
+.main-page-contact {
+  background-color: rgba(var(--color-background), 0.98);
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 2rem 4rem rgba(var(--color-shadow), 0.08);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.main-page-contact::before {
+  content: '';
+  position: absolute;
+  top: -2.5rem;
+  right: -5rem;
+  width: 16rem;
+  height: 16rem;
+  background: rgba(var(--color-button), 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.main-page-contact .main-page-title {
+  font-size: clamp(3rem, 4vw, 4.4rem);
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  color: rgb(var(--color-foreground));
+}
+
+.main-page-contact .rte {
+  color: rgba(var(--color-foreground), 0.88);
+  font-size: 1.03rem;
+  line-height: 1.95;
+}
+
+.main-page-contact .rte p {
+  margin-bottom: 1.75rem;
+}
+
+.main-page-contact .rte h2,
+.main-page-contact .rte h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.main-page-contact .rte blockquote {
+  border-left: 0.4rem solid rgb(var(--color-button));
+  background-color: rgba(var(--color-button), 0.06);
+  padding: 1.8rem 2rem;
+  margin: 2.5rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .main-page-contact {
+    padding: 4rem 3rem;
+  }
+}
+
+.main-page-about {
+  background: rgba(var(--color-background), 0.98);
+  border-radius: 2rem;
+  padding: 3rem 2.2rem;
+  box-shadow: 0 2rem 4rem rgba(var(--color-shadow), 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-page-about::before {
+  content: '';
+  position: absolute;
+  top: -3rem;
+  right: -6rem;
+  width: 16rem;
+  height: 16rem;
+  background: rgba(var(--color-button), 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.main-page-about .main-page-title {
+  font-size: clamp(3rem, 4vw, 4.4rem);
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  color: rgb(var(--color-foreground));
+}
+
+.main-page-about .rte {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(var(--color-foreground), 0.9);
+  max-width: 76rem;
+}
+
+.main-page-about .rte p {
+  margin-bottom: 1.7rem;
+}
+
+.main-page-about .rte h2,
+.main-page-about .rte h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.main-page-about .rte blockquote {
+  border-left: 0.4rem solid rgb(var(--color-button));
+  background: rgba(var(--color-button), 0.06);
+  padding: 1.8rem 2rem;
+  margin: 2.5rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .main-page-about {
+    padding: 4.5rem 3rem;
+  }
+}
+
+.page-placeholder-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.page-placeholder {
+  width: 52.5rem;
+  height: 52.5rem;
+}

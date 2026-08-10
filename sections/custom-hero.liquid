@@ -1,0 +1,100 @@
+{{ 'custom-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="custom-hero">
+  <div class="page-width">
+    <div class="hero-wrapper">
+      <div class="hero-content">
+        <h1>{{ section.settings.heading }}</h1>
+        <p>{{ section.settings.description }}</p>
+        <form action="{{ routes.search_url }}" method="get" class="hero-search">
+          <input
+            type="search"
+            name="q"
+            placeholder="{{ section.settings.search_placeholder }}"
+            aria-label="Search Books"
+          >
+
+          <button type="submit">Search</button>
+        </form>
+
+        
+      </div>
+
+      <div class="hero-image">
+        {% if section.settings.hero_image != blank %}
+          <img
+            src="{{ section.settings.hero_image | image_url: width: 800 }}"
+            alt="{{ section.settings.heading }}"
+            loading="lazy"
+            width="800"
+            height="600"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Custom Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Discover Your Next Great Read"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Explore thousands of books across fiction, business, psychology, self-help, and more."
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search Placeholder",
+      "default": "Search by title, author, or category..."
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primary Button",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary Button",
+      "default": "Browse Categories"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Hero"
+    }
+  ]
+}
+{% endschema %}

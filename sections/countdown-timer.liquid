@@ -1,0 +1,156 @@
+<section class="countdown-section">
+  <div class="page-width">
+    
+    <h2 class="countdown-heading">
+      {{ section.settings.heading }}
+    </h2>
+
+    <div id="countdown" class="countdown-wrapper">
+      <div class="time-box">
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
+
+      <div class="time-box">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
+
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.countdown-section{
+  padding:20px 20px;
+  background:#fff;
+  text-align:center;
+}
+
+.countdown-heading{
+  font-size:30px;
+  font-weight:700;
+  color:#5B1E1E;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.countdown-wrapper{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.time-box{
+  width:80px;
+  height:80px;
+  background:#5B1E1E;
+  color:#fff;
+  border-radius:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.time-box span{
+  font-size:20px;
+  font-weight:500;
+  line-height:1;
+}
+
+.time-box small{
+  margin-top:8px;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+@media(max-width:768px){
+
+.countdown-heading{
+font-size:28px;
+}
+
+.time-box{
+width:80px;
+height:80px;
+}
+
+.time-box span{
+font-size:18px;
+}
+
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const endDate = new Date("{{ section.settings.end_date }}").getTime();
+
+const timer = setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = endDate - now;
+
+if(distance < 0){
+clearInterval(timer);
+document.getElementById("countdown").innerHTML="<h3>Offer Expired</h3>";
+return;
+}
+
+const days = Math.floor(distance/(1000*60*60*24));
+
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+});
+</script>
+
+{% schema %}
+{
+  "name":"Countdown Timer",
+  "settings":[
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading",
+      "default":"Today's Best Offers"
+    },
+    {
+      "type":"text",
+      "id":"end_date",
+      "label":"End Date",
+      "default":"2026-12-31T23:59:59"
+    }
+  ],
+  "presets":[
+    {
+      "name":"Countdown Timer"
+    }
+  ]
+}
+{% endschema %}
