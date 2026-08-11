@@ -66,7 +66,7 @@
       "name": "Countdown Timer",
       "settings": {
         "heading": "Today's Best Offers",
-        "end_date": "2026-10-10T15:14:39"
+        "end_date": "2026-12-31T23:59:59"
       }
     },
     "collection_list_TVPniK": {
