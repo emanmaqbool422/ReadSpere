@@ -145,13 +145,13 @@
     },
     "content_for_index": [],
     "blocks": {
-      "12657775114333427046": {
-        "type": "shopify://apps/essential-countdown-timer/blocks/app_embed/722378e8-5a70-4eae-aa89-9e44e8e9f6de",
-        "disabled": true,
-        "settings": {}
-      },
       "477467645007963971": {
         "type": "shopify://apps/sales-pop-order-sales-popup/blocks/app-embed/186a4bd9-a884-4fa6-909b-ea21f3455d23",
+        "disabled": false,
+        "settings": {}
+      },
+      "12657775114333427046": {
+        "type": "shopify://apps/essential-countdown-timer/blocks/app_embed/722378e8-5a70-4eae-aa89-9e44e8e9f6de",
         "disabled": false,
         "settings": {}
       }
